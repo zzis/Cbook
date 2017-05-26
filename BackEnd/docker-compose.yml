@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8887:8887"
+    volumes:
+      - .:/usr/src/backend
+    command: npm start
+    links:
+      - mongodb
+  mongodb:
+    image: mongo:3.4.4
+    volumes:
+      - ./datadir:/data/db
+    command: ["mongod", "--auth"]
+    ports: 
+      - '27017:27017'
