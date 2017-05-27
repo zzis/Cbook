@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/usr/src/adminfrontend
+    command: ng serve -p 8888 --host 0.0.0.0
