@@ -3,6 +3,7 @@ version: '3'
 services:
   backend:
     build: .
+    image: cbook/backend:v0.0.1
     ports:
       - "8887:8887"
     volumes:
