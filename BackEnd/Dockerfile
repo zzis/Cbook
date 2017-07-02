@@ -1,4 +1,4 @@
-FROM node:7.10.0
+FROM node:6.10.3
 RUN mkdir /usr/src/backend
 WORKDIR /usr/src/backend
 RUN npm install

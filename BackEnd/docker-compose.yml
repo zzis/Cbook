@@ -11,8 +11,12 @@ services:
     command: nodemon
     links:
       - mongodb
+    depends_on:
+      - mongodb
   mongodb:
     image: mongo:3.4.4
+    environment:
+      - MONGO_DATA_DIR=/data/db
     volumes:
       - ./datadir:/data/db
     command: ["mongod", "--auth"]
